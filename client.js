@@ -9,10 +9,18 @@ const connect = function () {
     // interpret incoming data as text
     conn.setEncoding("utf8");
 
+    // Event listener for successful connection
+    conn.on("connect", () => {
+        console.log("Successfully connected to the game server!");
+        conn.write("Name: Ola\n");
+      });
+
     // Event listener for incoming data
     conn.on("data", (data) => {
       console.log("Server says:", data);
     });
+
+
 
     return conn;
   };
