@@ -13,14 +13,7 @@ const connect = function () {
     conn.on("connect", () => {
         console.log("Successfully connected to the game server!");
         conn.write("Name: Ola/n");
-        //conn.write("Move: up");
     });
-
-    // conn.on("connect", () => {
-    //     setTimeout(() => {
-    //         conn.write("Move: up");
-    //     }, 1000);
-    // });
 
     // Event listener for incoming data
     conn.on("data", (data) => {
@@ -29,8 +22,5 @@ const connect = function () {
 
     return conn;
 };
-
-//console.log("Connecting ...");
-//connect();
 
 module.exports = { connect };

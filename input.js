@@ -1,13 +1,3 @@
-// setup interface to handle user input from stdin
-// const setupInput =  (conn) =>{
-//     connection=conn;
-//     const stdin = process.stdin;
-//     stdin.setRawMode(true);
-//     stdin.setEncoding("utf8");
-//     stdin.resume();
-
-//     return stdin;
-//   };
 let connection;
 const handleUserInput = function (data) {
     console.log(data);
@@ -25,6 +15,15 @@ const handleUserInput = function (data) {
         case 'd':
             connection.write("Move: right");
             break;
+         case '1':
+             connection.write("Say: Hello, everyone!");
+             break;
+         case '2':
+             connection.write("Say: How's it going?");
+             break;
+         case '3':
+             connection.write("Say: Goodbye!");
+         break;
         case '\u0003':
             console.log("Exiting...");
             process.exit();
